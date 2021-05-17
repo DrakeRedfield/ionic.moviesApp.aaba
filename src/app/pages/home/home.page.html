@@ -1,6 +1,21 @@
 <app-header></app-header>
 
 <ion-content>
-    <app-slideshow-backdrop [newestMovies]="newestMovies" ></app-slideshow-backdrop>
-    <app-slideshow-poster [newestMovies]="newestMovies" ></app-slideshow-poster>
+    <app-slideshow-backdrop [movies]="newestMovies" ></app-slideshow-backdrop>
+    <ion-grid fixed>
+        <ion-row>
+            <ion-col>
+                <h3>Cartelera</h3>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <app-slideshow-poster [movies]="newestMovies" ></app-slideshow-poster>
+    <ion-grid fixed>
+        <ion-row>
+            <ion-col>
+                <h3>Populares</h3>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <app-slideshow-pares [movies]="popularMovies" (isEnd)="morePopular()"></app-slideshow-pares>
 </ion-content>

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { responseMB } from '../interfaces/interfaces';
+import { responseMB, movieDetails, responseCredits } from '../interfaces/interfaces';
 
 const url_server = environment.urlMDB
 const api_key = environment.apiKey
@@ -10,6 +10,8 @@ const api_key = environment.apiKey
   providedIn: 'root'
 })
 export class HttprequestService {
+
+  indexPopular = 0;
 
   constructor(
     private http: HttpClient,
@@ -30,6 +32,19 @@ export class HttprequestService {
     const inicio = this.formatingDate(now);
     const fin = this.formatingDate(nextMonth);
     return this.createQuery<responseMB>(`/discover/movie?primary_release_date.lte=${fin}&primary_release_date.gte=${inicio}`);
+  }
+
+  getPopular(){
+    this.indexPopular++;
+    return this.createQuery<responseMB>(`/discover/movie?sort_by=popularity.desc&page=${this.indexPopular}`);
+  }
+
+  movieDetail( id: string ){
+    return this.createQuery<movieDetails>(`/movie/${id}?a=1`);
+  }
+
+  getActors( id: string ){
+    return this.createQuery<responseCredits>(`/movie/${id}/credits?a=1`);
   }
 
   formatingDate(fecha: Date){

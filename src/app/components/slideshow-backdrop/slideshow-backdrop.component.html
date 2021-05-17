@@ -1,5 +1,5 @@
 <ion-slides [options]="slidesOptions">
-  <ion-slide *ngFor="let pelicula of newestMovies;">
+  <ion-slide *ngFor="let pelicula of movies;" (click)="showDetalle( pelicula.id )">
       <img [src]="pelicula.backdrop_path | images">
   </ion-slide>
 </ion-slides>

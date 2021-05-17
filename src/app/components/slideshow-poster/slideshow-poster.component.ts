@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 import { movie } from '../../interfaces/interfaces';
+import { DetalleComponent } from '../detalle/detalle.component';
 
 @Component({
   selector: 'app-slideshow-poster',
@@ -8,17 +10,31 @@ import { movie } from '../../interfaces/interfaces';
 })
 export class SlideshowPosterComponent implements OnInit {
 
-  @Input()newestMovies: movie[] = [];
+  @Input()movies: movie[] = [];
 
   slidesOptions = {
     slidesPerView: 3.4,
     freeMode: true,
   };
 
-  constructor() { }
+  constructor(
+    private modalController: ModalController,
+  ) { }
 
   ngOnInit() {
     // this.newestMovies[0].poster_path
+  }
+
+  async showDetalle( id ){
+    const alert = await this.modalController.create({
+      component: DetalleComponent,
+      componentProps: {
+        id: id
+      }
+    });
+
+    alert.present();
+    
   }
 
 }

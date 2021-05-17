@@ -10,6 +10,7 @@ import { movie } from '../../interfaces/interfaces';
 export class HomePage implements OnInit {
 
   newestMovies: movie[] = [];
+  popularMovies: movie[] = [];
 
   constructor(
     private requests:HttprequestService,
@@ -21,9 +22,21 @@ export class HomePage implements OnInit {
 
   getData(){
     this.requests.getPremiere().subscribe( resp =>{
-      // resp.
       this.newestMovies = resp.results;
     });
+    this.getPopular();
+  }
+
+  morePopular(){
+    this.getPopular();
+  }
+
+  getPopular(){
+    this.requests.getPopular().subscribe( resp =>{
+      const temparr = [...this.popularMovies, ...resp.results]
+      this.popularMovies = temparr;
+    });
+    
   }
 
 }
