@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
+import { Storage } from '@ionic/storage-angular';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   public appPages = [
     { title: 'Películas', url: '/home', icon: 'film' },
     { title: 'Buscar', url: '/search-page', icon: 'search' },
@@ -14,7 +15,11 @@ export class AppComponent {
   // public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   constructor(
     private platform: Platform,
+    private storage: Storage,
   ) {}
-
+  
+  ngOnInit(){
+    this.storage.create()
+  }
   
 }

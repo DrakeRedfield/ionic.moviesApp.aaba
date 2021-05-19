@@ -9,12 +9,14 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { HttpClientModule } from '@angular/common/http'
 import { DetalleComponent } from './components/detalle/detalle.component';
+import { IonicStorageModule } from '@ionic/storage-angular';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [
   ],
   imports: [
+    IonicStorageModule.forRoot(),
     HttpClientModule,
     BrowserModule,
     IonicModule.forRoot(),

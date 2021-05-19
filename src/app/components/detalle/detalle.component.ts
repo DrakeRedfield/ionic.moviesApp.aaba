@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { HttprequestService } from '../../services/httprequest.service';
 import { movieDetails, Crew, Cast } from '../../interfaces/interfaces';
 import { ModalController } from '@ionic/angular';
+import { StoragesService } from '../../services/storages.service';
 
 @Component({
   selector: 'app-detalle',
@@ -29,6 +30,7 @@ export class DetalleComponent implements OnInit {
   constructor(
     private requests: HttprequestService,
     private modalController: ModalController,
+    private localStorage: StoragesService,
   ) { }
 
   ngOnInit() {
@@ -42,6 +44,10 @@ export class DetalleComponent implements OnInit {
       console.log(resp)
       this.data = resp;
     });
+  }
+
+  saveFavorite(){
+    this.localStorage.saveFavorite(this.data);
   }
 
   getActors(){

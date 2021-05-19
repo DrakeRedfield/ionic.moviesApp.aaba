@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { responseMB, movieDetails, responseCredits } from '../interfaces/interfaces';
+import { responseMB, movieDetails, responseCredits, responseSearch } from '../interfaces/interfaces';
 
 const url_server = environment.urlMDB
 const api_key = environment.apiKey
@@ -45,6 +45,10 @@ export class HttprequestService {
 
   getActors( id: string ){
     return this.createQuery<responseCredits>(`/movie/${id}/credits?a=1`);
+  }
+
+  searchMovie( strSearch: string ){
+    return this.createQuery<responseSearch>(`/search/movie?a=1&query=${strSearch}`);
   }
 
   formatingDate(fecha: Date){

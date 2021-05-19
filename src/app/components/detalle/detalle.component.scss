@@ -8,6 +8,10 @@
 .overview{
     text-align: justify;
 }
+
 .btn-footer{
-    --background: #393939;
+    --background: transparent;
+    width: 100%;
+    --inner-border-width:0;
+    --box-shadow: 0;
 }

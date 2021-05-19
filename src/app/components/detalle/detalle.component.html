@@ -1,8 +1,4 @@
-<ion-header class="ion-no-border">
-  <ion-toolbar>
-    <ion-title>{{data.title}}</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header [showMenu]="false"></app-header>
 <ion-content>
   <img src="{{ data.backdrop_path | images }}" *ngIf="data.backdrop_path">
   <ion-grid fixed>
@@ -24,6 +20,7 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+  <app-subtitle [text]="data.title" ></app-subtitle>
   <ion-grid fixed>
     <ion-row>
       <ion-col size="12">
@@ -54,12 +51,12 @@
   </ion-slides>
 </ion-content>
 <ion-footer class="ion-no-border">
-  <ion-toolbar>
+  <ion-toolbar class="bg_gray">
     <ion-button class="btn-footer" (click)="cerrar()" slot="start">
       <ion-icon slot="start" name="caret-back"></ion-icon>
       <ion-label>Regresar</ion-label>
     </ion-button>
-    <ion-button class="btn-footer" (click)="cerrar()" slot="end">
+    <ion-button class="btn-footer" (click)="saveFavorite()" slot="end">
       <ion-label>Favoritos</ion-label>
       <ion-icon slot="end" name="heart"></ion-icon>
     </ion-button>

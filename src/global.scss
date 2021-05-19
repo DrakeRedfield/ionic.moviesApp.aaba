@@ -28,12 +28,19 @@
 *{
     font-family: 'Lato' !important;
 }
-ion-toolbar{
-    // --background: #124f88;
-    // color: white;
+.bg_gray{
+    --background: rgb(57,57,57);
+    // --background: linear-gradient(110deg, rgba(57,57,57,1) 0%, rgba(57,57,57,1) 52%, rgba(134,134,134,1) 100%);
+    // --background: #393939;
+    --color: white;
+    color: white;
 }
+// ion-toolbar{
+//     // --background: #124f88;
+//     // color: white;
+// }
 ion-content{
-    // --background: #124f88;
+    // --background: #393939;
     // color: white;
     // background: rgb(2,0,36);
     // --background: linear-gradient(201deg, rgba(2,0,36,1) 0%, rgba(38,38,213,1) 52%, rgba(0,213,255,1) 100%);

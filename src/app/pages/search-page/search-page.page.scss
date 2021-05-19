@@ -1,0 +1,25 @@
+ion-item{
+    --inner-border-width: 0;
+}
+.result-search-item{
+    --background: white;
+    --inner-padding-start: 10px;
+    --padding-start: 0;
+    font-size: 12px;
+    --min-height: 10px;
+}
+.result-search-item ion-icon{
+    // color: white;
+    // padding: 5px;
+    // border-radius: 10px;
+    // background: black;
+    margin-right: 2px;
+    margin-top: 0;
+    margin-bottom: 5px;
+    width: 18px;
+    height: 18px;
+}
+.result-search-item ion-label{
+    margin:0;
+    margin-bottom: 5px;
+}
