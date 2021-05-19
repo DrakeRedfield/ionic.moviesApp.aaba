@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { SlideshowPosterComponent } from './slideshow-poster/slideshow-poster.component';
 import { SlideshowParesComponent } from './slideshow-pares/slideshow-pares.component';
 import { DetalleComponent } from './detalle/detalle.component';
+import { SubtitleComponent } from './subtitle/subtitle.component';
 
 
 
@@ -17,6 +18,7 @@ import { DetalleComponent } from './detalle/detalle.component';
     SlideshowPosterComponent,
     SlideshowParesComponent,
     DetalleComponent,
+    SubtitleComponent,
   ],
   exports:[
     HeaderComponent,
@@ -24,6 +26,7 @@ import { DetalleComponent } from './detalle/detalle.component';
     SlideshowPosterComponent,
     SlideshowParesComponent,
     DetalleComponent,
+    SubtitleComponent,
   ],
   imports: [
     CommonModule,

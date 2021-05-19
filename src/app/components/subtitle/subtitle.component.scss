@@ -1,0 +1,19 @@
+ion-label{
+    font-weight: 700;
+    font-size: 25px !important;
+}
+ion-item{
+    --background: white;
+    --inner-padding-start: 10px;
+    --padding-start: 0;
+}
+ion-item ion-icon{
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    background: black;
+}
+ion-grid, ion-row, ion-col{
+    padding-left: 0;
+    padding-right: 0;
+}
