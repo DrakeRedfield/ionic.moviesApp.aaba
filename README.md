@@ -1,6 +1,6 @@
 # Movies App
 
-Esta es una aplicación donde podrás ver cuáles son las películas más recientes, las más populares e incluso podrás buscar por tu película favorita con el buscador.
+Esta es una aplicación donde podrás ver cuáles son las películas más recientes, las más populares e incluso podrás buscar tu película favorita.
 Toda la aplicación es funcional, con ayuda de Movie DB.
 
 # Galería
@@ -11,7 +11,10 @@ Toda la aplicación es funcional, con ayuda de Movie DB.
 ![Busqueda2](https://user-images.githubusercontent.com/83781782/118924782-2b741380-b903-11eb-9f75-0e740a155449.png)
 ![Favoritos](https://user-images.githubusercontent.com/83781782/118924763-2616c900-b903-11eb-8ad3-1df962c289d7.png)
 
-# Installation
+# Instalación
+
+#### Api Key
+Puedes solicitar una api key en [Movie DB](https://www.themoviedb.org/) y colocarlo en enviroments.ts
 
 Es necesario ejecutar npm install para reconstruir el node_module
 
