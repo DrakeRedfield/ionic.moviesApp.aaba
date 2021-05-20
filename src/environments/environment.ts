@@ -4,10 +4,12 @@
 
 export const environment = {
   production: false,
-  apiKey: 'be77e25c9e699f1251cc6992f621d07b',
+  apiKey: 'apiKeyHere',
   urlMDB: 'https://api.themoviedb.org/3',
   imgPath: 'https://image.tmdb.org/t/p'
 };
+
+// Visit Movie DB to get an Api key
 
 /*
  * For easier debugging in development mode, you can import the following file
