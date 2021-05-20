@@ -27,6 +27,7 @@ export class DetalleComponent implements OnInit {
   actores: Cast[]
   hiddenDescription: number = 150;
   isFavorite: boolean = false;
+  hasChanged: boolean = false;
 
   constructor(
     private requests: HttprequestService,
@@ -49,6 +50,7 @@ export class DetalleComponent implements OnInit {
   }
 
   async saveFavorite(){
+    this.hasChanged = true;
     this.isFavorite = await this.localStorage.saveFavorite(this.data);
   }
 
@@ -60,6 +62,8 @@ export class DetalleComponent implements OnInit {
   }
 
   cerrar(){
-    this.modalController.dismiss();
+    this.modalController.dismiss({
+      'changed': this.hasChanged
+    });
   }
 }

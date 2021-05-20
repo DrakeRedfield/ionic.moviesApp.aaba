@@ -2,7 +2,9 @@
 
 <ion-content>
     <app-slideshow-backdrop [movies]="newestMovies" ></app-slideshow-backdrop>
-    <app-subtitle text="Cartelera" icon="bar-chart"></app-subtitle>
+    <div class="minus-tenmargin">
+        <app-subtitle text="Cartelera" icon="bar-chart"></app-subtitle>
+    </div>
     <app-slideshow-poster [movies]="newestMovies" ></app-slideshow-poster>
     <app-subtitle text="Populares" ></app-subtitle>
     <app-slideshow-pares [movies]="popularMovies" (isEnd)="morePopular()"></app-slideshow-pares>

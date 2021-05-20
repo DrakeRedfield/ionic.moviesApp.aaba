@@ -1,5 +1,8 @@
 <app-header></app-header>
 
 <ion-content>
-
+    <div class="full-width" *ngFor="let display of genresList | filterGenre: favoritesMovies">
+        <app-subtitle [text]="display.genre"></app-subtitle>
+        <app-slideshow-poster [movies]="display.movies" (closedModal)="closedModal( $event )"></app-slideshow-poster>
+    </div>
 </ion-content>

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { responseMB, movieDetails, responseCredits, responseSearch } from '../interfaces/interfaces';
+import { responseMB, movieDetails, responseCredits, responseSearch, responseGenres, Genre } from '../interfaces/interfaces';
 
 const url_server = environment.urlMDB
 const api_key = environment.apiKey
@@ -56,5 +56,13 @@ export class HttprequestService {
     let dia: any = fecha.getMonth();
     mes = ( mes < 10? `0${mes}`:`${mes}`)
     return `${fecha.getFullYear()}-${mes}-01`
+  }
+
+  loadGenres(): Promise<Genre[]>{
+    return new Promise( resolve =>{
+      this.createQuery<responseGenres>(`/genre/movie/list?a=1`).subscribe( (resp) =>{
+        resolve(resp.genres)
+      });
+    })
   }
 }

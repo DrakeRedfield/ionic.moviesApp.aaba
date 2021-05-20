@@ -68,7 +68,7 @@ interface Productioncompany {
   origin_country: string;
 }
 
-interface Genre {
+export interface Genre {
   id: number;
   name: string;
 }
@@ -137,4 +137,14 @@ export interface resultSearchMovie {
   video: boolean;
   vote_average: number;
   vote_count: number;
+}
+
+export interface responseGenres {
+  genres: Genre[];
+}
+
+export interface displayFavorite{
+  genre: string,
+  idGenre: number,
+  movies: movieDetails[]
 }
