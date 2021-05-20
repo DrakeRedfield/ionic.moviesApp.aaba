@@ -58,7 +58,7 @@
     </ion-button>
     <ion-button class="btn-footer" (click)="saveFavorite()" slot="end">
       <ion-label>Favoritos</ion-label>
-      <ion-icon slot="end" name="heart"></ion-icon>
+      <ion-icon slot="end" [name]="'heart' + (!isFavorite? '-outline':'')"></ion-icon>
     </ion-button>
   </ion-toolbar>
 </ion-footer>

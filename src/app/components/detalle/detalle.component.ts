@@ -26,6 +26,7 @@ export class DetalleComponent implements OnInit {
   data: movieDetails ={};
   actores: Cast[]
   hiddenDescription: number = 150;
+  isFavorite: boolean = false;
 
   constructor(
     private requests: HttprequestService,
@@ -33,10 +34,11 @@ export class DetalleComponent implements OnInit {
     private localStorage: StoragesService,
   ) { }
 
-  ngOnInit() {
+  async ngOnInit() {
     console.log(this.id)
     this.getDetails();
     this.getActors();
+    this.isFavorite = await this.localStorage.findFavorite(this.id);
   }
 
   getDetails(){
@@ -46,8 +48,8 @@ export class DetalleComponent implements OnInit {
     });
   }
 
-  saveFavorite(){
-    this.localStorage.saveFavorite(this.data);
+  async saveFavorite(){
+    this.isFavorite = await this.localStorage.saveFavorite(this.data);
   }
 
   getActors(){
